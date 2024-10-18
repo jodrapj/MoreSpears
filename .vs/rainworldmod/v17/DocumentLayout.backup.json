@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|solutionrelative:spears\\tranqspear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|c:\\users\\jodrapj\\source\\repos\\rainworldmod\\rainworldmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\rainworldmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|solutionrelative:rainworldmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|c:\\users\\jodrapj\\source\\repos\\rainworldmod\\extenum\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\extenum\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|solutionrelative:extenum\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|c:\\users\\jodrapj\\source\\repos\\rainworldmod\\hooks\\hooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\hooks\\hooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|solutionrelative:hooks\\hooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,8 +38,7 @@
               "RelativeToolTip": "extenum\\Register.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T16:47:35.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T16:47:35.841Z"
             },
             {
               "$type": "Document",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "hooks\\Hooks.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAUwAkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T15:15:05.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T15:15:05.569Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "RainWorldMod.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAQwB0AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:35:51.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T19:35:51.495Z"
             }
           ]
         }
