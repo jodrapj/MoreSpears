@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MoreSpears")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b151138ac713bfc095ab994a946e32385a195bd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("MoreSpears")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MoreSpears")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

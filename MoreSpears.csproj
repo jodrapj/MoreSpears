@@ -2,7 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
+	<LangVersion>10.0</LangVersion>
     <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;Mod</Configurations>
+    <BaseOutputPath>bin\</BaseOutputPath>
   </PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="lib\*.dll" Private="False" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<PathMap>$(MSBuildThisFileDirectory.Replace(',', ',,').Replace('=', '=='))=/</PathMap>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+	</PropertyGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<ItemGroup>
+			<BuildFiles Include="$(Outdir)\*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(BuildFiles)" DestinationFolder="$(ProjectDir)Mod\plugins" />
+	</Target>
 
 </Project>
