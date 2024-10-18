@@ -27,10 +27,7 @@ namespace MoreSpears.Spears
         public override void Update(bool eu)
         {
             base.Update(eu);
-            if (this.stuckInWall == null)
-            {
-                
-            }
+            // TBD
         }
 
         public void Tranquilize(PhysicalObject otherObject)
@@ -45,14 +42,6 @@ namespace MoreSpears.Spears
             creat.Stun(this.effectLen);
 
             loseEffectCounter--;
-        }
-
-        public override void PlaceInRoom(Room placeRoom)
-        {
-            base.PlaceInRoom(placeRoom);
-            firstChunk.HardSetPosition(placeRoom.MiddleOfTile(abstractPhysicalObject.pos.Tile));
-            rotation = Custom.RNV();
-            lastRotation = rotation;
         }
 
         public override void ApplyPalette(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, RoomPalette palette)
@@ -75,6 +64,7 @@ namespace MoreSpears.Spears
         public override void DrawSprites(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, float timeStacker, Vector2 camPos)
         {
             base.DrawSprites(sLeaser, rCam, timeStacker, camPos);
+
         }
     }
 }

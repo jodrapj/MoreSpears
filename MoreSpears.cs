@@ -35,12 +35,14 @@ namespace MoreSpears
             foreach (ModManager.Mod mod in newlyDisabledMods)
                 if (mod.id == GUID)
                     Register.UnregisterValues();
+            Logger.LogDebug("Spears mod unloaded1");
         }
 
         private void RainWorld_OnModsEnabled(On.RainWorld.orig_OnModsEnabled orig, RainWorld self, ModManager.Mod[] newlyEnabledMods)
         {
             orig(self, newlyEnabledMods);
             Register.RegisterValues();
+            Logger.LogDebug("Spears mod loaded1");
         }
 
         private void RainWorld_OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
@@ -52,6 +54,7 @@ namespace MoreSpears
 
             try
             {
+                Logger.LogDebug("Spears mod loaded");
                 SpearHook();
             }
             catch(Exception ex)
