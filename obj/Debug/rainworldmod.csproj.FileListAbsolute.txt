@@ -1,0 +1,13 @@
+C:\Users\jodrapj\source\repos\rainworldmod\bin\Debug\rainworldmod.dll
+C:\Users\jodrapj\source\repos\rainworldmod\bin\Debug\rainworldmod.pdb
+C:\Users\jodrapj\source\repos\rainworldmod\bin\Debug\BepInEx.dll
+C:\Users\jodrapj\source\repos\rainworldmod\bin\Debug\HOOKS-Assembly-CSharp.dll
+C:\Users\jodrapj\source\repos\rainworldmod\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jodrapj\source\repos\rainworldmod\bin\Debug\PUBLIC-Assembly-CSharp.dll
+C:\Users\jodrapj\source\repos\rainworldmod\bin\Debug\UnityEngine.CoreModule.dll
+C:\Users\jodrapj\source\repos\rainworldmod\bin\Debug\UnityEngine.dll
+C:\Users\jodrapj\source\repos\rainworldmod\obj\Debug\rainworldmod.csproj.AssemblyReference.cache
+C:\Users\jodrapj\source\repos\rainworldmod\obj\Debug\rainworldmod.csproj.CoreCompileInputs.cache
+C:\Users\jodrapj\source\repos\rainworldmod\obj\Debug\rainworl.469D8E6C.Up2Date
+C:\Users\jodrapj\source\repos\rainworldmod\obj\Debug\rainworldmod.dll
+C:\Users\jodrapj\source\repos\rainworldmod\obj\Debug\rainworldmod.pdb

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|c:\\users\\jodrapj\\source\\repos\\rainworldmod\\spears\\tranqspear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|solutionrelative:spears\\tranqspear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|c:\\users\\jodrapj\\source\\repos\\rainworldmod\\rainworldmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|solutionrelative:rainworldmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|c:\\users\\jodrapj\\source\\repos\\rainworldmod\\extenum\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|solutionrelative:extenum\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|c:\\users\\jodrapj\\source\\repos\\rainworldmod\\hooks\\hooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AF350B6-7861-410F-9163-C8DC6CFEECA4}|rainworldmod.csproj|solutionrelative:hooks\\hooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Register.cs",
+              "DocumentMoniker": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\extenum\\Register.cs",
+              "RelativeDocumentMoniker": "extenum\\Register.cs",
+              "ToolTip": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\extenum\\Register.cs",
+              "RelativeToolTip": "extenum\\Register.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:47:35.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Hooks.cs",
+              "DocumentMoniker": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\hooks\\Hooks.cs",
+              "RelativeDocumentMoniker": "hooks\\Hooks.cs",
+              "ToolTip": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\hooks\\Hooks.cs",
+              "RelativeToolTip": "hooks\\Hooks.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T15:15:05.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TranqSpear.cs",
+              "DocumentMoniker": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\Spears\\TranqSpear.cs",
+              "RelativeDocumentMoniker": "Spears\\TranqSpear.cs",
+              "ToolTip": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\Spears\\TranqSpear.cs",
+              "RelativeToolTip": "Spears\\TranqSpear.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T19:50:36.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RainWorldMod.cs",
+              "DocumentMoniker": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\RainWorldMod.cs",
+              "RelativeDocumentMoniker": "RainWorldMod.cs",
+              "ToolTip": "C:\\Users\\jodrapj\\source\\repos\\rainworldmod\\RainWorldMod.cs",
+              "RelativeToolTip": "RainWorldMod.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwB0AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T19:35:51.495Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
