@@ -25,11 +25,6 @@ namespace MoreSpears.Spears
             UnityEngine.Debug.Log("tranqspear ctor init'ed");
         }
 
-        public override void Update(bool eu)
-        {
-            base.Update(eu);
-        }
-
         public void Tranquilize(PhysicalObject otherObject)
         {
             if (!(otherObject is Creature) || loseEffectCounter == 0)
@@ -42,14 +37,12 @@ namespace MoreSpears.Spears
             creat.Stun(this.effectLen);
 
             loseEffectCounter--;
-
-            MoreSpears.logger.LogDebug($"Tranquilized {creat}");
         }
 
-        public override void Collide(PhysicalObject otherObject, int myChunk, int otherChunk)
+        public override bool HitSomething(SharedPhysics.CollisionResult result, bool eu)
         {
-            base.Collide(otherObject, myChunk, otherChunk);
-            UnityEngine.Debug.Log("Hit something");
+            Debug.Log("hit something");
+            return base.HitSomething(result, eu);
         }
 
         public override void ApplyPalette(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, RoomPalette palette)
@@ -61,7 +54,7 @@ namespace MoreSpears.Spears
 
         public override void AddToContainer(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, FContainer newContatiner)
         {
-            base.AddToContainer(sLeaser, rCam, newContatiner);
+            //base.AddToContainer(sLeaser, rCam, newContatiner);
             newContatiner = newContatiner ?? rCam.ReturnFContainer("Items");
             foreach (FSprite sprite in sLeaser.sprites)
             {
@@ -71,7 +64,7 @@ namespace MoreSpears.Spears
         }
         public override void DrawSprites(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, float timeStacker, Vector2 camPos)
         {
-            base.DrawSprites(sLeaser, rCam, timeStacker, camPos);
+            //base.DrawSprites(sLeaser, rCam, timeStacker, camPos);
         }
     }
 }

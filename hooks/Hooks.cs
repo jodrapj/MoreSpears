@@ -1,25 +1,37 @@
 ﻿using MoreSpears.Spears;
 using IL;
+using System;
 
 namespace MoreSpears
 {
     public partial class MoreSpears
     {
-        private void SpearHook()
+        public void SpearHook()
         {
-            On.Spear.LodgeInCreature_CollisionResult_bool += Spear_LodgeInCreature_CollisionResult_bool;
-
+            try
+            {
+                On.Spear.LodgeInCreature_CollisionResult_bool += Spear_LodgeInCreature_CollisionResult_bool1;
+                MoreSpears.logger.LogDebug($"Loaded hooks");
+            }
+            catch (Exception ex)
+            {
+                UnityEngine.Debug.LogException( ex );
+            }
         }
 
-
-
-        private void Spear_LodgeInCreature_CollisionResult_bool(On.Spear.orig_LodgeInCreature_CollisionResult_bool orig, Spear self, SharedPhysics.CollisionResult result, bool eu)
+        public void Spear_LodgeInCreature_CollisionResult_bool1(On.Spear.orig_LodgeInCreature_CollisionResult_bool orig, Spear self, SharedPhysics.CollisionResult result, bool eu)
         {
             orig(self, result, eu);
             if (self is TranqSpear spear)
             {
                 spear.Tranquilize(result.obj);
+                MoreSpears.logger.LogDebug("Tranquilized creature");
             }
+        }
+
+        private void Spear_LodgeInCreatureHook()
+        {
+
         }
     }
 }

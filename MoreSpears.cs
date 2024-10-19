@@ -29,7 +29,7 @@ namespace MoreSpears
         public void AbstractPhysicalObject_Realize(On.AbstractPhysicalObject.orig_Realize orig, AbstractPhysicalObject self)
         {
             orig(self);
-            if (self.type == AbstractPhysicalObject.AbstractObjectType.Spear && self is TranqSpear)
+            if (self.type == AbstractPhysicalObject.AbstractObjectType.Spear)
             {
                 self.realizedObject = new TranqSpear((TranqSpearAbstract)self, self.world);
                 Logger.LogMessage("Realized TranqSpear");
