@@ -1,9 +1,5 @@
 ﻿using MoreSpears.Spears;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using IL;
 
 namespace MoreSpears
 {
@@ -12,14 +8,17 @@ namespace MoreSpears
         private void SpearHook()
         {
             On.Spear.LodgeInCreature_CollisionResult_bool += Spear_LodgeInCreature_CollisionResult_bool;
+
         }
+
+
 
         private void Spear_LodgeInCreature_CollisionResult_bool(On.Spear.orig_LodgeInCreature_CollisionResult_bool orig, Spear self, SharedPhysics.CollisionResult result, bool eu)
         {
             orig(self, result, eu);
-            if (self is TranqSpear)
+            if (self is TranqSpear spear)
             {
-                ((TranqSpear)self).Tranquilize(result.obj);
+                spear.Tranquilize(result.obj);
             }
         }
     }

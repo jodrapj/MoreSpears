@@ -13,7 +13,7 @@ namespace MoreSpears.Spears
         public Color tranqColor;
         public Color blackColor;
 
-        public TranqSpear(AbstractPhysicalObject abstractPhysicalObject, World world) : base(abstractPhysicalObject, world) // Наследование конструктора класса-родителя
+        public TranqSpear(TranqSpearAbstract abstractPhysicalObject, World world) : base(abstractPhysicalObject, world) // Наследование конструктора класса-родителя
         {
             this.segments = 2;
             UnityEngine.Random.State state = UnityEngine.Random.state;
@@ -22,12 +22,12 @@ namespace MoreSpears.Spears
             UnityEngine.Random.state = state;
 
             loseEffectCounter = UnityEngine.Random.Range(1, 4);
+            UnityEngine.Debug.Log("tranqspear ctor init'ed");
         }
 
         public override void Update(bool eu)
         {
             base.Update(eu);
-            // TBD
         }
 
         public void Tranquilize(PhysicalObject otherObject)
@@ -42,6 +42,14 @@ namespace MoreSpears.Spears
             creat.Stun(this.effectLen);
 
             loseEffectCounter--;
+
+            MoreSpears.logger.LogDebug($"Tranquilized {creat}");
+        }
+
+        public override void Collide(PhysicalObject otherObject, int myChunk, int otherChunk)
+        {
+            base.Collide(otherObject, myChunk, otherChunk);
+            UnityEngine.Debug.Log("Hit something");
         }
 
         public override void ApplyPalette(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, RoomPalette palette)
@@ -64,7 +72,6 @@ namespace MoreSpears.Spears
         public override void DrawSprites(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, float timeStacker, Vector2 camPos)
         {
             base.DrawSprites(sLeaser, rCam, timeStacker, camPos);
-
         }
     }
 }
