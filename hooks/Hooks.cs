@@ -28,10 +28,5 @@ namespace MoreSpears
                 MoreSpears.logger.LogDebug("Tranquilized creature");
             }
         }
-
-        private void Spear_LodgeInCreatureHook()
-        {
-
-        }
     }
 }

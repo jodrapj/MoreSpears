@@ -32,17 +32,11 @@ namespace MoreSpears.Spears
                 return;
             }
 
-            var creat = (otherObject as Creature);
+            Creature? creat = (otherObject as Creature);
 
             creat.Stun(this.effectLen);
 
             loseEffectCounter--;
-        }
-
-        public override bool HitSomething(SharedPhysics.CollisionResult result, bool eu)
-        {
-            Debug.Log("hit something");
-            return base.HitSomething(result, eu);
         }
 
         public override void ApplyPalette(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, RoomPalette palette)
@@ -64,7 +58,7 @@ namespace MoreSpears.Spears
         }
         public override void DrawSprites(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, float timeStacker, Vector2 camPos)
         {
-            //base.DrawSprites(sLeaser, rCam, timeStacker, camPos);
+            base.DrawSprites(sLeaser, rCam, timeStacker, camPos);
         }
     }
 }
