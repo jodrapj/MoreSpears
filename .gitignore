@@ -1,4 +1,5 @@
-bin\
-Mod\
-.vs\
-obj\
+bin
+Mod
+.vs
+obj
+lib
