@@ -8,7 +8,8 @@ namespace MoreSpears.Spears
     {
         public int segments;
         public int loseEffectCounter;
-        public int effectLen = 340;
+        public int maxEffectLen = 200;
+        public int minEffectLen = 100;
         public Color tranqColor;
         public Color blackColor;
 
@@ -33,7 +34,9 @@ namespace MoreSpears.Spears
 
             Creature? creat = (otherObject as Creature);
 
-            creat.Stun(this.effectLen);
+            int rndLength = UnityEngine.Random.Range(minEffectLen, maxEffectLen);
+
+            creat.Stun(rndLength);
 
             loseEffectCounter--;
         }
