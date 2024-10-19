@@ -27,6 +27,6 @@ namespace MoreSpears
                 spear.Tranquilize(result.obj);
                 MoreSpears.logger.LogDebug("Tranquilized creature");
             }
-        }
+        }   
     }
 }
