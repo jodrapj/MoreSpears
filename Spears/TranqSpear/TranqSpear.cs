@@ -13,7 +13,7 @@ namespace MoreSpears.Spears
         public Color tranqColor;
         public Color blackColor;
 
-        public TranqSpear(TranqSpearAbstract abstractPhysicalObject, World world) : base(abstractPhysicalObject, world) // Наследование конструктора класса-родителя
+        public TranqSpear(AbstractTranqSpear abstractPhysicalObject, World world) : base(abstractPhysicalObject, world) // Наследование конструктора класса-родителя
         {
             this.spearDamageBonus = 0.5f;
             this.segments = 2;

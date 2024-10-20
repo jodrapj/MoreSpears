@@ -35,7 +35,7 @@ namespace MoreSpears
             {
                 if (self.abstractSpear.explosive == false && self.abstractSpear.electric == false && result.obj is BigSpider)
                 {
-                    self.abstractPhysicalObject = new AbstractPhysicalObject(self.room.world, Register.tranqSpear, new TranqSpear(self.abstractPhysicalObject as TranqSpearAbstract, self.room.world), self.abstractPhysicalObject.pos, self.room.game.GetNewID());
+                    self.abstractPhysicalObject = new AbstractPhysicalObject(self.room.world, Register.tranqSpear, new TranqSpear(self.abstractPhysicalObject as AbstractTranqSpear, self.room.world), self.abstractPhysicalObject.pos, self.room.game.GetNewID());
                 }
             }
         }

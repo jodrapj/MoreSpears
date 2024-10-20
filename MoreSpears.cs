@@ -32,7 +32,7 @@ namespace MoreSpears
             Logger.LogInfo($"Trying to realize. Data: {self.realizedObject}");
             if (self.type == Register.tranqSpear)
             {
-                self.realizedObject = new TranqSpear((TranqSpearAbstract)self, self.world);
+                self.realizedObject = new TranqSpear((AbstractTranqSpear)self, self.world);
                 Logger.LogMessage("Realized TranqSpear");
             }
         }

@@ -3,9 +3,9 @@ using MoreSpears;
 
 namespace MoreSpears.Spears
 {
-    public class TranqSpearAbstract : AbstractSpear
+    public class AbstractTranqSpear : AbstractSpear
     {
-        public TranqSpearAbstract(World world, TranqSpear realizedObject, WorldCoordinate pos, EntityID ID) : base(world, realizedObject, pos, ID, false)
+        public AbstractTranqSpear(World world, TranqSpear realizedObject, WorldCoordinate pos, EntityID ID) : base(world, realizedObject, pos, ID, false)
         {
             this.type = Register.tranqSpear;
         }
