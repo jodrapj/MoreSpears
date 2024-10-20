@@ -26,6 +26,14 @@ namespace MoreSpears.Spears
             UnityEngine.Debug.Log("tranqspear ctor init'ed");
         }
 
+        public override void PlaceInRoom(Room placeRoom)
+        {
+            base.PlaceInRoom(placeRoom);
+
+            firstChunk.HardSetPosition(placeRoom.MiddleOfTile(abstractPhysicalObject.pos.Tile));
+            lastRotation = rotation;
+        }
+
         public void Tranquilize(PhysicalObject otherObject)
         {
             if (!(otherObject is Creature) || loseEffectCounter == 0)

@@ -1,7 +1,6 @@
 ﻿using MoreSpears.Spears;
 using IL;
 using System;
-using MoreSpears.Extension;
 using System.Linq;
 
 namespace MoreSpears
@@ -21,6 +20,22 @@ namespace MoreSpears
             }
         }
 
+        public void RoomHook()
+        {
+            On.AbstractRoom.AddEntity += AbstractRoom_AddEntity;
+        }
+
+        private void AbstractRoom_AddEntity(On.AbstractRoom.orig_AddEntity orig, AbstractRoom self, AbstractWorldEntity ent)
+        {
+            float value = UnityEngine.Random.value;
+            bool flag = ent is AbstractSpear && value < 0.25f && (ent as AbstractSpear).hue == 0f;
+            if (flag)
+            {
+                ent = new AbstractTranqSpear(ent.world, null, ent.pos, ent.ID);
+            }
+            orig(self, ent);
+        }
+
         public void Spear_LodgeInCreature_CollisionResult_bool(On.Spear.orig_LodgeInCreature_CollisionResult_bool orig, Spear self, SharedPhysics.CollisionResult result, bool eu)
         {
             orig(self, result, eu);
@@ -29,13 +44,11 @@ namespace MoreSpears
                 spear.Tranquilize(result.obj);
             }
 
-            
-
-            if (self.abstractPhysicalObject.type == AbstractPhysicalObject.AbstractObjectType.Spear)
+            if (self.abstractPhysicalObject.type == Register.tranqSpear)
             {
-                if (self.abstractSpear.explosive == false && self.abstractSpear.electric == false && result.obj is BigSpider)
+                if (result.obj is BigSpider)
                 {
-                    self.abstractPhysicalObject = new AbstractPhysicalObject(self.room.world, Register.tranqSpear, new TranqSpear(self.abstractPhysicalObject as AbstractTranqSpear, self.room.world), self.abstractPhysicalObject.pos, self.room.game.GetNewID());
+                    (self as TranqSpear).loseEffectCounter = UnityEngine.Random.Range(1, 4);
                 }
             }
         }

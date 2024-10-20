@@ -32,6 +32,7 @@ namespace MoreSpears
             Logger.LogInfo($"Trying to realize. Data: {self.realizedObject}");
             if (self.type == Register.tranqSpear)
             {
+                self.Destroy();
                 self.realizedObject = new TranqSpear((AbstractTranqSpear)self, self.world);
                 Logger.LogMessage("Realized TranqSpear");
             }
@@ -65,6 +66,7 @@ namespace MoreSpears
             try 
             {            
                 SpearHook();
+                RoomHook();
                 UnityEngine.Debug.Log("Spears mod loaded");
             }
             catch(Exception ex)
