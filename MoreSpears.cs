@@ -11,7 +11,7 @@ namespace MoreSpears
     {
         public const string GUID = "jodrapj.morespears";
         public const string NAME = "MoreSpears";
-        public const string VERSION = "0.0.21";
+        public const string VERSION = "0.0.31";
         public static MoreSpears Instance;
         public static bool isInit = false;
         public static ManualLogSource logger;
@@ -32,9 +32,12 @@ namespace MoreSpears
             Logger.LogInfo($"Trying to realize. Data: {self.realizedObject}");
             if (self.type == Register.tranqSpear)
             {
-                self.Destroy();
                 self.realizedObject = new TranqSpear((AbstractTranqSpear)self, self.world);
                 Logger.LogMessage("Realized TranqSpear");
+            } else if (self.type == Register.heavySpear)
+            {
+                self.realizedObject = new HeavySpear((AbstractHeavySpear)self, self.world);
+                Logger.LogMessage("Realized HeavySpear");
             }
         }
 

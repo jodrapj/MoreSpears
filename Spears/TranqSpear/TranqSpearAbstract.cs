@@ -1,7 +1,4 @@
-﻿using System;
-using MoreSpears;
-
-namespace MoreSpears.Spears
+﻿namespace MoreSpears.Spears
 {
     public class AbstractTranqSpear : AbstractSpear
     {
