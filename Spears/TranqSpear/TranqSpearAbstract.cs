@@ -7,7 +7,7 @@ namespace MoreSpears.Spears
     {
         public TranqSpearAbstract(World world, TranqSpear realizedObject, WorldCoordinate pos, EntityID ID) : base(world, realizedObject, pos, ID, false)
         {
-            this.type = Register.tranqSpearAbstract;
+            this.type = Register.tranqSpear;
         }
     }
 }

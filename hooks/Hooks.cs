@@ -1,6 +1,8 @@
 ﻿using MoreSpears.Spears;
 using IL;
 using System;
+using MoreSpears.Extension;
+using System.Linq;
 
 namespace MoreSpears
 {
@@ -10,7 +12,7 @@ namespace MoreSpears
         {
             try
             {
-                On.Spear.LodgeInCreature_CollisionResult_bool += Spear_LodgeInCreature_CollisionResult_bool1;
+                On.Spear.LodgeInCreature_CollisionResult_bool += Spear_LodgeInCreature_CollisionResult_bool;
                 MoreSpears.logger.LogDebug($"Loaded hooks");
             }
             catch (Exception ex)
@@ -19,23 +21,23 @@ namespace MoreSpears
             }
         }
 
-        public void Spear_LodgeInCreature_CollisionResult_bool1(On.Spear.orig_LodgeInCreature_CollisionResult_bool orig, Spear self, SharedPhysics.CollisionResult result, bool eu)
+        public void Spear_LodgeInCreature_CollisionResult_bool(On.Spear.orig_LodgeInCreature_CollisionResult_bool orig, Spear self, SharedPhysics.CollisionResult result, bool eu)
         {
             orig(self, result, eu);
             if (self is TranqSpear spear)
             {
                 spear.Tranquilize(result.obj);
             }
-            //if (self is Spear basicspear)
-            //{
-            //    if (basicspear.abstractSpear.explosive == false && basicspear.abstractSpear.electric == false && result.obj is BigSpider)
-            //    {
-            //        var prev = basicspear;
-            //        basicspear = new TranqSpear(
-            //            new TranqSpearAbstract(self.abstractPhysicalObject.world, basicspear as TranqSpear, self.abstractPhysicalObject.pos, self.abstractPhysicalObject.ID),
-            //            self.abstractPhysicalObject.world);
-            //    }
-            //} 
-        }   
+
+            
+
+            if (self.abstractPhysicalObject.type == AbstractPhysicalObject.AbstractObjectType.Spear)
+            {
+                if (self.abstractSpear.explosive == false && self.abstractSpear.electric == false && result.obj is BigSpider)
+                {
+                    self.abstractPhysicalObject = new AbstractPhysicalObject(self.room.world, Register.tranqSpearAbstract, new TranqSpear(self.abstractPhysicalObject as TranqSpearAbstract, self.room.world), self.abstractPhysicalObject.pos, self.room.game.GetNewID());
+                }
+            }
+        }
     }
 }

@@ -32,13 +32,12 @@ namespace MoreSpears
             Logger.LogInfo($"Trying to realize. Data: {self.realizedObject}");
             if (self.type == Register.tranqSpear)
             {
-                self.realizedObject.Destroy();
                 self.realizedObject = new TranqSpear((TranqSpearAbstract)self, self.world);
                 Logger.LogMessage("Realized TranqSpear");
             }
         }
 
-        private void RainWorld_OnModsDisabled(On.RainWorld.orig_OnModsDisabled orig, RainWorld self, ModManager.Mod[] newlyDisabledMods)
+        public void RainWorld_OnModsDisabled(On.RainWorld.orig_OnModsDisabled orig, RainWorld self, ModManager.Mod[] newlyDisabledMods)
         {
             orig(self, newlyDisabledMods);
             foreach (ModManager.Mod mod in newlyDisabledMods)
@@ -49,11 +48,11 @@ namespace MoreSpears
                 }
         }
 
-        private void RainWorld_OnModsEnabled(On.RainWorld.orig_OnModsEnabled orig, RainWorld self, ModManager.Mod[] newlyEnabledMods)
+        public void RainWorld_OnModsEnabled(On.RainWorld.orig_OnModsEnabled orig, RainWorld self, ModManager.Mod[] newlyEnabledMods)
         {
             orig(self, newlyEnabledMods);
             Register.RegisterValues();
-            UnityEngine.Debug.Log("Spears mod loaded");
+            UnityEngine.Debug.Log("Spears mod loaded!!");
         }
 
         public void RainWorld_OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
