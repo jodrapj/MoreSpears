@@ -20,35 +20,39 @@ namespace MoreSpears
         {
             Instance = this;
             logger = this.Logger;
-            On.RainWorld.OnModsInit += RainWorld_OnModsInit;
             On.RainWorld.OnModsEnabled += RainWorld_OnModsEnabled;
             On.RainWorld.OnModsDisabled += RainWorld_OnModsDisabled;
+            On.RainWorld.OnModsInit += RainWorld_OnModsInit;
             On.AbstractPhysicalObject.Realize += AbstractPhysicalObject_Realize;
         }
 
         public void AbstractPhysicalObject_Realize(On.AbstractPhysicalObject.orig_Realize orig, AbstractPhysicalObject self)
         {
             orig(self);
-            if (self.type == AbstractPhysicalObject.AbstractObjectType.Spear)
+            Logger.LogInfo($"Trying to realize. Data: {self.realizedObject}");
+            if (self.type == Register.tranqSpear)
             {
+                self.realizedObject.Destroy();
                 self.realizedObject = new TranqSpear((TranqSpearAbstract)self, self.world);
                 Logger.LogMessage("Realized TranqSpear");
             }
         }
 
-        public void RainWorld_OnModsDisabled(On.RainWorld.orig_OnModsDisabled orig, RainWorld self, ModManager.Mod[] newlyDisabledMods)
+        private void RainWorld_OnModsDisabled(On.RainWorld.orig_OnModsDisabled orig, RainWorld self, ModManager.Mod[] newlyDisabledMods)
         {
             orig(self, newlyDisabledMods);
             foreach (ModManager.Mod mod in newlyDisabledMods)
                 if (mod.id == GUID)
                 {
+                    Register.UnregisterValues();
                     Logger.LogDebug("Spears mod unloaded1");
                 }
         }
 
-        public void RainWorld_OnModsEnabled(On.RainWorld.orig_OnModsEnabled orig, RainWorld self, ModManager.Mod[] newlyEnabledMods)
+        private void RainWorld_OnModsEnabled(On.RainWorld.orig_OnModsEnabled orig, RainWorld self, ModManager.Mod[] newlyEnabledMods)
         {
             orig(self, newlyEnabledMods);
+            Register.RegisterValues();
             UnityEngine.Debug.Log("Spears mod loaded");
         }
 

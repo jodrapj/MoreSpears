@@ -25,8 +25,17 @@ namespace MoreSpears
             if (self is TranqSpear spear)
             {
                 spear.Tranquilize(result.obj);
-                MoreSpears.logger.LogDebug("Tranquilized creature");
             }
+            //if (self is Spear basicspear)
+            //{
+            //    if (basicspear.abstractSpear.explosive == false && basicspear.abstractSpear.electric == false && result.obj is BigSpider)
+            //    {
+            //        var prev = basicspear;
+            //        basicspear = new TranqSpear(
+            //            new TranqSpearAbstract(self.abstractPhysicalObject.world, basicspear as TranqSpear, self.abstractPhysicalObject.pos, self.abstractPhysicalObject.ID),
+            //            self.abstractPhysicalObject.world);
+            //    }
+            //} 
         }   
     }
 }

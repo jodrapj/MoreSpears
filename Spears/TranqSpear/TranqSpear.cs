@@ -15,6 +15,7 @@ namespace MoreSpears.Spears
 
         public TranqSpear(TranqSpearAbstract abstractPhysicalObject, World world) : base(abstractPhysicalObject, world) // Наследование конструктора класса-родителя
         {
+            this.spearDamageBonus = 0.5f;
             this.segments = 2;
             UnityEngine.Random.State state = UnityEngine.Random.state;
             this.tranqColor = Custom.HSL2RGB(0.99f, 0.48f, 0.20f);
@@ -29,6 +30,7 @@ namespace MoreSpears.Spears
         {
             if (!(otherObject is Creature) || loseEffectCounter == 0)
             {
+                MoreSpears.logger.LogDebug("Cant tranquilize, counter is empty");
                 return;
             }
 
@@ -37,6 +39,7 @@ namespace MoreSpears.Spears
             int rndLength = UnityEngine.Random.Range(minEffectLen, maxEffectLen);
 
             creat.Stun(rndLength);
+            MoreSpears.logger.LogDebug("Tranquilized creature");
 
             loseEffectCounter--;
         }
