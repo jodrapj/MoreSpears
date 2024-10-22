@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace MoreSpears.Spears
 {
@@ -8,8 +9,9 @@ namespace MoreSpears.Spears
         public Color blackColor;
         public HeavySpear(AbstractHeavySpear abstractPhysicalObject, World world) : base(abstractPhysicalObject, world)
         {
+            this.alwaysStickInWalls = true;
             this.bounce = 0.2f;
-            this.bodyChunks[0] = new BodyChunk(this, 0, new Vector2(0f, 0f), 10f, 0.14f);
+            this.bodyChunks[0] = new BodyChunk(this, 0, new Vector2(0f, 0f), 10f, 0.35f);
             this.spearDamageBonus = 3f;
             this.segments = 2;
             UnityEngine.Random.State state = UnityEngine.Random.state;
@@ -53,6 +55,15 @@ namespace MoreSpears.Spears
             }
         }
 
+        public override void Update(bool eu)
+        {
+            base.Update(eu);
+            if (this.grabbedBy.Any(x => x.grabber is Player))
+            {
+                MoreSpears.logger.LogInfo("Grabbed by player");
+            }
+        }
+
         public override void DrawSprites(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, float timeStacker, Vector2 camPos) // Electric spear sprite (to be remade)
         {
             base.DrawSprites(sLeaser, rCam, timeStacker, camPos);
@@ -71,6 +82,12 @@ namespace MoreSpears.Spears
             Vector3 vector2 = Vector3.Slerp(this.lastRotation, this.rotation, timeStacker) * (float)node * -4f;
             return Vector2.Lerp(base.firstChunk.lastPos, base.firstChunk.pos, timeStacker) + new Vector2
                 (vector.x, vector.y) * 30f + new Vector2(vector2.x, vector2.y);
+        }
+
+
+        public override bool HitSomething(SharedPhysics.CollisionResult result, bool eu)
+        {
+            return base.HitSomething(result, eu);
         }
     }
 }
