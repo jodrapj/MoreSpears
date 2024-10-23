@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using RWCustom;
+using System.Drawing.Imaging;
 
 namespace MoreSpears
 {
@@ -13,6 +14,7 @@ namespace MoreSpears
             try
             {
                 On.Spear.LodgeInCreature_CollisionResult_bool += Spear_LodgeInCreature_CollisionResult_bool;
+                On.Spear.HitSomething += Spear_HitSomething;
                 MoreSpears.logger.LogDebug($"Loaded hooks");
             }
             catch (Exception ex)
@@ -21,18 +23,47 @@ namespace MoreSpears
             }
         }
 
+        private bool Spear_HitSomething(On.Spear.orig_HitSomething orig, Spear self, SharedPhysics.CollisionResult result, bool eu)
+        {
+            orig(self, result, eu);
+            if (self is HeavySpear)
+            {
+                if (result.obj != null)
+                    (result.obj as Creature).Violence(self.firstChunk, new Vector2?(self.firstChunk.vel * self.firstChunk.mass * 2f), result.chunk, result.onAppendagePos, Creature.DamageType.Stab, 5f, 20f);
+            }
+            return false;
+        }
+
         public void PlayerHook()
         {
             try
             {
                 On.Player.Grabability += Player_Grabability;
                 On.Player.GraphicsModuleUpdated += Player_GraphicsModuleUpdated;
+                On.Weapon.HitAnotherThrownWeapon += Weapon_HitAnotherThrownWeapon;
 
             } catch (Exception ex)
             {
                 MoreSpears.logger.LogError( ex );
             }
         }
+
+        private void Weapon_HitAnotherThrownWeapon(On.Weapon.orig_HitAnotherThrownWeapon orig, Weapon self, Weapon obj)
+        {
+            orig(self, obj);
+            if (self is HeavySpear)
+            {
+                Vector2 vector = Custom.DegToVec(UnityEngine.Random.value * 360f);
+                for (int i = 0; i < UnityEngine.Random.Range(1, 5); i++)
+                {
+                    self.room.AddObject(new Spark(obj.thrownPos, Custom.RNV() * Mathf.Lerp(4f, 30f, UnityEngine.Random.value), Color.white, null, 4, 18));
+                }
+                self.room.PlaySound(SoundID.Spear_Bounce_Off_Creauture_Shell, vector);
+                obj.Destroy();
+            }
+        }
+
+
 
         private void Player_GraphicsModuleUpdated(On.Player.orig_GraphicsModuleUpdated orig, Player self, bool actuallyViewed, bool eu)
         {
@@ -68,7 +99,7 @@ namespace MoreSpears
         {
             if (obj is HeavySpear)
             {
-                return Player.ObjectGrabability.TwoHands;
+                return Player.ObjectGrabability.BigOneHand;
             }
             return orig(self, obj);
         }

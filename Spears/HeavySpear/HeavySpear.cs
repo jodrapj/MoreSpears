@@ -58,10 +58,6 @@ namespace MoreSpears.Spears
         public override void Update(bool eu)
         {
             base.Update(eu);
-            if (this.grabbedBy.Any(x => x.grabber is Player))
-            {
-                MoreSpears.logger.LogInfo("Grabbed by player");
-            }
         }
 
         public override void DrawSprites(RoomCamera.SpriteLeaser sLeaser, RoomCamera rCam, float timeStacker, Vector2 camPos) // Electric spear sprite (to be remade)
@@ -82,12 +78,6 @@ namespace MoreSpears.Spears
             Vector3 vector2 = Vector3.Slerp(this.lastRotation, this.rotation, timeStacker) * (float)node * -4f;
             return Vector2.Lerp(base.firstChunk.lastPos, base.firstChunk.pos, timeStacker) + new Vector2
                 (vector.x, vector.y) * 30f + new Vector2(vector2.x, vector2.y);
-        }
-
-
-        public override bool HitSomething(SharedPhysics.CollisionResult result, bool eu)
-        {
-            return base.HitSomething(result, eu);
         }
     }
 }
