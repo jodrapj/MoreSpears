@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using BepInEx;
 using BepInEx.Logging;
 using MoreSpears.Spears;
+using MoreSpears.Spears.IceSpear;
 
 namespace MoreSpears
 {
@@ -27,20 +27,25 @@ namespace MoreSpears
         public void AbstractPhysicalObject_Realize(On.AbstractPhysicalObject.orig_Realize orig, AbstractPhysicalObject self)
         {
             orig(self);
-            if (!Register.registered)
+            if (!Registry.registered)
                 return;
             Logger.LogInfo($"Trying to realize. Data: {self.realizedObject}");
             //if (self.type == Register.Spears["TranqSpear"])
-            if (self.type == Register.tranqSpear)
+            if (self.type == Registry.tranqSpear)
             {
                 self.realizedObject = new TranqSpear((AbstractTranqSpear)self, self.world);
                 Logger.LogMessage("Realized TranqSpear");
             }
             //if (self.type == Register.Spears["HeavySpear"])
-            if (self.type == Register.heavySpear)
+            if (self.type == Registry.heavySpear)
             {
                 self.realizedObject = new HeavySpear((AbstractHeavySpear)self, self.world);
                 Logger.LogMessage("Realized HeavySpear");
+            }
+            if (self.type == Registry.iceSpear)
+            {
+                self.realizedObject = new IceSpear((AbstractIceSpear)self, self.world);
+                Logger.LogMessage("Realized IceSpear");
             }
         }
 
@@ -54,8 +59,10 @@ namespace MoreSpears
             try 
             {
 
-                if (!Register.registered)
-                    Register.RegisterValues();
+                if (!Registry.registered)
+                {
+                    Registry.RegisterValues();
+                }
 
                 SpearHook();
                 RoomHook();
