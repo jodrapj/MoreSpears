@@ -1,9 +1,9 @@
 {
-  "id": "jodrapj.morespears",
+  "id": "morespears",
   "name": "More Spears",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "authors": "jodrapj, iiul",
-  "description": "Adds more spears, idk",
+  "description": "Spear expansion mod, thumbnail by iiul",
   "requirements": [],
   "requirements_names": [],
   "checksum_override_version": true
