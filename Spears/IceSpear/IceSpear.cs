@@ -30,8 +30,7 @@ namespace MoreSpears.Spears.IceSpear
         public override void ChangeMode(Mode newMode)
         {
             base.ChangeMode(newMode);
-            if (newMode == Weapon.Mode.StuckInWall || newMode == Weapon.Mode.StuckInCreature ||
-                this.lastMode == Weapon.Mode.Thrown && this.mode == Weapon.Mode.Free)
+            if (newMode == Weapon.Mode.StuckInWall || newMode == Weapon.Mode.StuckInCreature || lastMode == Weapon.Mode.Thrown && mode == Weapon.Mode.Free)
             {
                 this.Destroy();
             }

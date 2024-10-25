@@ -61,7 +61,7 @@ namespace MoreSpears
             {
                 On.Player.Grabability += Player_Grabability;
                 On.Player.GraphicsModuleUpdated += Player_GraphicsModuleUpdated;
-                On.Player.ThrowObject += Player_ThrowObject;
+                On.Player.TossObject += Player_TossObject;
                 logger.LogInfo("Loaded player hooks");
             } catch (Exception ex)
             {
@@ -69,18 +69,18 @@ namespace MoreSpears
             }
         }
 
-        private void Player_ThrowObject(On.Player.orig_ThrowObject orig, Player self, int grasp, bool eu)
+        private void Player_TossObject(On.Player.orig_TossObject orig, Player self, int grasp, bool eu)
         {
+            orig(self, grasp, eu);
             IntVector2 intVector = new IntVector2(self.ThrowDirection, 0);
             Vector2 vector = self.firstChunk.pos + intVector.ToVector2() * 10f + new Vector2(0f, 4f);
             if (self.grasps[grasp] != null)
             {
-                if (self.grasps[grasp].grabbed is IceSpear)
+                if (ModManager.MSC && self.grasps[grasp].grabbed is IceSpear && self.SlugCatClass == MoreSlugcats.MoreSlugcatsEnums.SlugcatStatsName.Saint)
                 {
                     (self.grasps[grasp].grabbed as IceSpear).Thrown(self, vector, new Vector2?(self.mainBodyChunk.pos - intVector.ToVector2() * 10f), intVector, Mathf.Lerp(1f, 1.5f, self.Adrenaline), eu);
                 }
             }
-            orig(self, grasp, eu);
         }
 
         private void Weapon_HitAnotherThrownWeapon(On.Weapon.orig_HitAnotherThrownWeapon orig, Weapon self, Weapon obj)
